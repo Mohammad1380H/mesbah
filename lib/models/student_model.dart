@@ -1,12 +1,12 @@
 class StudentModel {
-  int? id;
+  String? id;
   String? firstName;
   String? lastName;
   int? grade;
   String? school;
   String? nationalCode;
   String? mobilePhone;
-  int? classCatId;
+  String? classCatId;
   int? score;
   int? presence;
   StudentModel();

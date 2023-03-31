@@ -45,7 +45,15 @@ dependencies:
   flutter_spinbox: ^0.13.0
   easy_search_bar: ^2.4.2
   get: ^4.6.5
+  flutter_launcher_icons: ^0.12.0
 
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logo.png"
+  min_sdk_android: 16 # android min sdk min:16, default 21
 
 dev_dependencies:
   flutter_test:

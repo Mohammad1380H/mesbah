@@ -1,5 +1,5 @@
 class ClassCategoriesModel {
-  int id;
+  String? id;
   String? cateName;
 
   ClassCategoriesModel({

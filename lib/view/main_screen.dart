@@ -34,7 +34,17 @@ class _MainScreenState extends State<MainScreen> {
         appBar: appBarApp(context),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [posterApp(), listViewApp()],
+          children: [
+            posterApp(),
+            Obx(() => studentListController.isLoading.value
+                ? Column(children: [
+                    const SizedBox(
+                      height: 100,
+                    ),
+                    loading()
+                  ])
+                : listViewApp())
+          ],
         ),
       ),
     );
@@ -250,9 +260,9 @@ class _MainScreenState extends State<MainScreen> {
 
   _showButtomSheetChooseClass() {
     var textTheme = Get.textTheme;
-    int selectedCategoryId = 0;
-    String selectedCategoryName =
-        studentListController.classCategoriesList[0].cateName!;
+    var firstItem = studentListController.classCategoriesList[0];
+    String selectedCategoryId = firstItem.id!;
+    String selectedCategoryName = firstItem.cateName!;
 
     Get.bottomSheet(Container(
       height: Get.height / 3,
@@ -288,8 +298,8 @@ class _MainScreenState extends State<MainScreen> {
             ),
             onChanged: (value) {
               selectedCategoryName = value!;
-              selectedCategoryId =
-                  studentListController.getIdOfCategories(selectedCategoryName);
+              selectedCategoryId = studentListController
+                  .getIdOfCategories(selectedCategoryName)!;
               log("${selectedCategoryId}selectedIndex");
             },
           ),
@@ -298,6 +308,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           ElevatedButton(
               onPressed: () {
+                studentListController.getStudentListByCat(selectedCategoryId);
                 Navigator.pop(context);
                 Navigator.push(
                   context,
