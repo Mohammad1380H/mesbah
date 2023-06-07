@@ -27,6 +27,8 @@ class _ListStudentScreenState extends State<ListStudentScreen> {
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController schoolController = TextEditingController();
+  TextEditingController fatherNameController = TextEditingController();
+  TextEditingController birthdayController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController nationalCodeController = TextEditingController();
   int gradeIdController = 0;
@@ -165,6 +167,12 @@ class _ListStudentScreenState extends State<ListStudentScreen> {
                                         lastNameController.text =
                                             studentListController
                                                 .studentList[index].lastName!;
+                                        fatherNameController.text =
+                                            studentListController
+                                                .studentList[index].fatherName!;
+                                        birthdayController.text =
+                                            studentListController
+                                                .studentList[index].birthday!;
                                         schoolController.text =
                                             studentListController
                                                 .studentList[index].school!;
@@ -292,6 +300,29 @@ class _ListStudentScreenState extends State<ListStudentScreen> {
                   const SizedBox(height: 8.0),
                   TextFormField(
                     style: textTheme.headlineMedium,
+                    controller: fatherNameController,
+                    decoration: InputDecoration(
+                      labelText: 'نام پدر',
+                      labelStyle: textTheme.headlineMedium,
+                      border: const OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  TextFormField(
+                    style: textTheme.headlineMedium,
+                    controller: birthdayController,
+                    decoration: InputDecoration(
+                      labelText: 'تاریخ تولد',
+                      labelStyle: textTheme.headlineMedium,
+                      border: const OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+
+
+
+                  TextFormField(
+                    style: textTheme.headlineMedium,
                     controller: schoolController,
                     decoration: InputDecoration(
                       labelStyle: textTheme.headlineMedium,
@@ -351,6 +382,8 @@ class _ListStudentScreenState extends State<ListStudentScreen> {
                         val!.classCatId = selectedCategoryId;
                         val.firstName = firstNameController.text;
                         val.lastName = lastNameController.text;
+                        val.fatherName = fatherNameController.text;
+                        val.birthday = birthdayController.text;
                         val.grade = selectedGradeId;
                         val.school = schoolController.text;
                         val.mobilePhone = phoneNumberController.text;

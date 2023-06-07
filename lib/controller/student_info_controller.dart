@@ -18,6 +18,8 @@ class StudentInfoController extends GetxController {
     final newMember = ParseObject('users')
       ..set('firstName', singleStudentInfo.value.firstName)
       ..set('lastName', singleStudentInfo.value.lastName)
+      ..set('fatherName', singleStudentInfo.value.fatherName)
+      ..set('birthday', singleStudentInfo.value.birthday)
       ..set('gradeId', singleStudentInfo.value.grade)
       ..set('school', singleStudentInfo.value.school)
       ..set('nationalCode', singleStudentInfo.value.nationalCode)
@@ -48,6 +50,8 @@ class StudentInfoController extends GetxController {
       ..objectId = id
       ..set('firstName', singleStudentInfo.value.firstName)
       ..set('lastName', singleStudentInfo.value.lastName)
+      ..set('fatherName', singleStudentInfo.value.fatherName)
+      ..set('birthday', singleStudentInfo.value.birthday)
       ..set('gradeId', singleStudentInfo.value.grade)
       ..set('school', singleStudentInfo.value.school)
       ..set('nationalCode', singleStudentInfo.value.nationalCode)

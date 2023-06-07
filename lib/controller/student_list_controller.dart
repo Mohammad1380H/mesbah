@@ -10,6 +10,7 @@ import '../models/student_model.dart';
 
 class StudentListController extends GetxController {
   RxList<StudentModel> studentList = RxList();
+  RxString posterUrl = ' '.obs;
   RxList<ClassCategoriesModel> classCategoriesList = RxList();
   RxList<ClassGradeModel> classGradeList = RxList();
   RxBool isLoading = false.obs;
@@ -18,7 +19,28 @@ class StudentListController extends GetxController {
     super.onInit();
     getClassesCats();
     getGrades();
+    getPosterUrl();
     debugPrint("اتصال لیست دانش آموزان");
+  }
+
+  getPosterUrl() async {
+    isLoading.value = true;
+    QueryBuilder<ParseObject> queryCategories =
+        QueryBuilder<ParseObject>(ParseObject('Poster'));
+    final ParseResponse apiResponse = await queryCategories.query();
+
+    if (apiResponse.success && apiResponse.results != null) {
+      List<ParseObject> resultList = apiResponse.results as List<ParseObject>;
+      for (int i = 0; i < resultList.length; i++) {
+        final varCtegories = resultList[i];
+        final posterUrl_ = varCtegories.get<String>('imageUrl')!;
+        posterUrl.value = posterUrl_;
+
+      }
+    }
+
+    isLoading.value = false;
+    log('get poster');
   }
 
 ///////////////////////////
@@ -79,6 +101,8 @@ class StudentListController extends GetxController {
         final varCtegories = resultList[i];
         final classCatId = varCtegories.get<String>('categoryId')!;
         final firstName = varCtegories.get<String>('firstName')!;
+        final fatherName = varCtegories.get<String>('fatherName')!;
+        final birthday = varCtegories.get<String>('birthday')!;
         final grade = varCtegories.get<int>('gradeId')!;
         final id = varCtegories.get<String>('objectId')!;
         final lastName = varCtegories.get<String>('lastName')!;
@@ -97,9 +121,11 @@ class StudentListController extends GetxController {
             nationalCode: nationalCode,
             presence: presence,
             school: school,
-            score: score));
+            score: score,
+            birthday: birthday,
+            fatherName: fatherName));
       }
-    } 
+    }
     isLoading.value = false;
     log('getStudentListByCat');
   }

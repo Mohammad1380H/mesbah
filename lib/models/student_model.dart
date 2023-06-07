@@ -2,6 +2,8 @@ class StudentModel {
   String? id;
   String? firstName;
   String? lastName;
+  String? fatherName;
+  String? birthday;
   int? grade;
   String? school;
   String? nationalCode;
@@ -14,6 +16,8 @@ class StudentModel {
     required this.id,
     required this.firstName,
     required this.lastName,
+    required this.fatherName,
+    required this.birthday,
     required this.grade,
     required this.school,
     required this.nationalCode,

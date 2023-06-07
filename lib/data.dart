@@ -34,7 +34,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "2",
-      id: "0"),
+      id: "0",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'محسن',
       lastName: 'صفایی',
@@ -45,7 +47,9 @@ List<StudentModel> studentsFake = [
       presence: 1,
       nationalCode: '0000000000',
       classCatId: "2",
-      id:"1"),
+      id: "1",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'محمد طه',
       lastName: 'امیر محصل اصلانی',
@@ -56,7 +60,9 @@ List<StudentModel> studentsFake = [
       presence: 2,
       nationalCode: '0000000000',
       classCatId: "3",
-      id: "2"),
+      id: "2",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'مجتبی ',
       lastName: 'نجاتی',
@@ -67,7 +73,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "1",
-      id: "3"),
+      id: "3",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'محمد',
       lastName: 'هادیان',
@@ -78,7 +86,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "0",
-      id: "4"),
+      id: "4",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'رضا',
       lastName: 'رمضان زاده',
@@ -89,7 +99,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "0",
-      id: "5"),
+      id: "5",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'یحیی',
       lastName: 'معلمی',
@@ -100,7 +112,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "0",
-      id: "6"),
+      id: "6",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'هادی',
       lastName: 'مجیدی',
@@ -111,7 +125,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "0",
-      id: "7"),
+      id: "7",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'مجید',
       lastName: 'حقیقت',
@@ -122,7 +138,9 @@ List<StudentModel> studentsFake = [
       presence: 0,
       nationalCode: '0000000000',
       classCatId: "2",
-      id:" 8"),
+      id: " 8",
+      birthday: '',
+      fatherName: ''),
   StudentModel.fromApp(
       firstName: 'امیرمحمد',
       lastName: 'محمدی',
@@ -133,7 +151,9 @@ List<StudentModel> studentsFake = [
       presence: 3,
       nationalCode: '0000000000',
       classCatId: "3",
-      id: "9"),
+      id: "9",
+      birthday: '',
+      fatherName: ''),
 ];
 
 List<String> gradeOptionsFake = [

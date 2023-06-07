@@ -94,13 +94,17 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Container posterApp() {
-    return Container(
-      width: double.infinity,
-      height: 300,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover, image: Assets.images.poster.provider())),
+  Obx posterApp() {
+    return Obx(
+      () => Container(
+              width: double.infinity,
+              height: 300,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image:
+                          NetworkImage(studentListController.posterUrl.value))),
+            ),
     );
   }
 
